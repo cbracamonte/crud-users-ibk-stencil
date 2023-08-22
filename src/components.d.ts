@@ -5,62 +5,70 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil-community/router";
 export namespace Components {
-    interface AppHome {
-    }
-    interface AppProfile {
-        "match": MatchResults;
-    }
     interface AppRoot {
     }
+    interface IbkUsersAdd {
+        "allRequiredFields": boolean;
+        "ibkId": string;
+    }
+    interface IbkUsersEdit {
+        "idUser": string;
+    }
+}
+export interface IbkUsersAddCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIbkUsersAddElement;
 }
 declare global {
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
-    }
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
-    };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-    }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
-    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLIbkUsersAddElement extends Components.IbkUsersAdd, HTMLStencilElement {
+    }
+    var HTMLIbkUsersAddElement: {
+        prototype: HTMLIbkUsersAddElement;
+        new (): HTMLIbkUsersAddElement;
+    };
+    interface HTMLIbkUsersEditElement extends Components.IbkUsersEdit, HTMLStencilElement {
+    }
+    var HTMLIbkUsersEditElement: {
+        prototype: HTMLIbkUsersEditElement;
+        new (): HTMLIbkUsersEditElement;
+    };
     interface HTMLElementTagNameMap {
-        "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "ibk-users-add": HTMLIbkUsersAddElement;
+        "ibk-users-edit": HTMLIbkUsersEditElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
-    }
-    interface AppProfile {
-        "match"?: MatchResults;
-    }
     interface AppRoot {
     }
+    interface IbkUsersAdd {
+        "allRequiredFields"?: boolean;
+        "ibkId"?: string;
+        "onMyClick"?: (event: IbkUsersAddCustomEvent<any>) => void;
+    }
+    interface IbkUsersEdit {
+        "idUser"?: string;
+    }
     interface IntrinsicElements {
-        "app-home": AppHome;
-        "app-profile": AppProfile;
         "app-root": AppRoot;
+        "ibk-users-add": IbkUsersAdd;
+        "ibk-users-edit": IbkUsersEdit;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "ibk-users-add": LocalJSX.IbkUsersAdd & JSXBase.HTMLAttributes<HTMLIbkUsersAddElement>;
+            "ibk-users-edit": LocalJSX.IbkUsersEdit & JSXBase.HTMLAttributes<HTMLIbkUsersEditElement>;
         }
     }
 }
