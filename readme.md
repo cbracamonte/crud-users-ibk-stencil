@@ -11,8 +11,26 @@ Este proyecto es un ejemplo de un CRUD de Usuarios - Microfrontend con Stencil +
 
 # Stencil + StoryBook
 
-- En este caso vamos a generar un story para el componente ``ibk-user-add```
+- En este caso vamos a generar un story para el componente `ibk-user-add`
 - Para generar Storybook a partir de componentes de Stencil, debemos seguir:
+- Nos dirigimos a `stencil.config.ts` y configuramos la forma del build, debemos generarlo con el type ````'dist-custom-elements' `````
+
+```javascript
+
+  outputTargets: [
+    // Para generar los customElements para StoryBook activamos esta configuración
+    {
+      type: 'dist-custom-elements',
+      customElementsExportBehavior: 'bundle',
+    },
+    // Para generar la web y alojarla en un servidor http activamos esta configuracion
+    // {
+    //   type: 'www',
+    //   baseUrl: 'http://localhost:3333',
+    // }
+  ],
+
+```
 
 ```bash
    npm run build
@@ -23,7 +41,6 @@ Este proyecto es un ejemplo de un CRUD de Usuarios - Microfrontend con Stencil +
 
 - StoryBook - Users Add Component
   ![Users Add Component](https://raw.githubusercontent.com/cbracamonte/crud-users-ibk-stencil/main/assets/storybook.png)
-
 
 ## Demo Images
 
