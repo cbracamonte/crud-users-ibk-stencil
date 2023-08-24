@@ -1,19 +1,13 @@
-module.exports = {
-  stories: ['../src/stories/**/*.stories.(js|jsx|ts|tsx)'],
-
-  addons: ['@storybook/addon-docs', '@storybook/addon-viewport', '@storybook/addon-backgrounds', '@storybook/addon-controls'],
-
+/** @type { import('@storybook/html-webpack5').StorybookConfig } */
+const config = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-notes', '@storybook/addon-knobs'],
   framework: {
     name: '@storybook/html-webpack5',
     options: {},
   },
-
   docs: {
-    autodocs: true,
-  },
-
-  features: {
-    legacyMdx1: false,
-    storyStoreV7: true,
+    autodocs: 'tag',
   },
 };
+export default config;

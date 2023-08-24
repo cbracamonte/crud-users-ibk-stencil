@@ -7,9 +7,15 @@ export const config: Config = {
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   outputTargets: [
+    // Para generar los customElements para StoryBook
+    // {
+    //   type: 'dist-custom-elements',
+    //   customElementsExportBehavior: 'bundle',
+    // },
+    // Para generar la web y alojarla en un servidor http
     {
       type: 'www',
       baseUrl: 'http://localhost:3333',
-    },
+    }
   ],
 };

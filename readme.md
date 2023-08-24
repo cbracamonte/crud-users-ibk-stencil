@@ -11,36 +11,51 @@ Este proyecto es un ejemplo de un CRUD de Usuarios - Microfrontend con Stencil +
 
 # Stencil + StoryBook
 
-npm run storybook
+- En este caso vamos a generar un story para el componente ``ibk-user-add```
+- Para generar Storybook a partir de componentes de Stencil, debemos seguir:
+
+```bash
+   npm run build
+   npm run storybook
+```
+
+- Demo
+
+- StoryBook - Users Add Component
+  ![Users Add Component](https://raw.githubusercontent.com/cbracamonte/crud-users-ibk-stencil/main/assets/storybook.png)
+
 
 ## Demo Images
 
 - Listado
-![Listado del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/listado.PNG)
+  ![Listado del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/listado.PNG)
 - Agregar
-![Agregar del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/agregar.PNG)
+  ![Agregar del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/agregar.PNG)
 - Editar
-![Editar del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/editar.PNG)
+  ![Editar del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/editar.PNG)
 - Eliminar
-![Eliminar del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/eliminar.PNG)
+  ![Eliminar del Usuarios](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/eliminar.PNG)
 - Genera Imagen
-![Genera imagen para su descarga](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/generafoto.PNG)
+  ![Genera imagen para su descarga](https://raw.githubusercontent.com/cbracamonte/crud-user-ibk-challengue/main/assets/generafoto.PNG)
 
 ## Técnologias
 
 - Web-Shell : Angular 14
-- Web Microfrontend : Stencil
-- broadcastchannel - Libreria creada por Hernan Bracamonte Dev
+- Web Microfrontend : Stencil 3.2.2
+- broadcastchannel - Libreria creada por Hernan Bracamonte
 
 ## Pasos de Configuración
 
 1. Instalar Docker:
+
    - [Instrucciones para instalar Docker](https://docs.docker.com/desktop/install/)
 
 2. Habilitar Subsistema de Linux en Windows:
+
    - [Instrucciones para habilitar WSL en Windows](https://learn.microsoft.com/en-us/windows/wsl/install-manual)
 
 3. Descargar las imágenes de NGINX y Node desde DockerHub:
+
    - [Imagen de NGINX en DockerHub](https://hub.docker.com/_/nginx)
    - [Imagen de Node en DockerHub](https://hub.docker.com/_/node/)
 
@@ -49,6 +64,13 @@ npm run storybook
    ```bash
    docker pull nginx
    docker pull node
+   ```
+
+## Clonamos el proyecto
+
+```bash
+  git clone https://github.com/cbracamonte/crud-users-ibk-stencil.git
+```
 
 ## Construcción y Ejecución
 
@@ -61,8 +83,8 @@ npm run storybook
 
 ## Acceder a la aplicación
 
-Si estás ejecutando localmente: <http://localhost:3333/users>
-Si estás utilizando Docker: <http://localhost:3333/users>
+Si estás ejecutando localmente: http://localhost:3333
+Si estás utilizando Docker: http://localhost:3333
 
 ## Manejo de Estados en Microfrontends
 
@@ -70,11 +92,13 @@ Para el manejo de estados entre microfrontends, se utiliza el concepto de Broadc
 
 - Para instalar la librería:
 
-    ```javascript
-    npm install broadcast-channel-hb
+  ```javascript
+  npm install broadcast-channel-hb
+  ```
+
 - La idea es generar eventos en la shell (app Angular) y escuchar estos eventos en otras aplicaciones (microfrontends) para compartir estados.
 
-- Repositorio: <https://github.com/cbracamonte/broadcast-channel-ibk>
+- Repositorio: https://github.com/cbracamonte/broadcast-channel-ibk
 
 ## Notas
 
@@ -85,5 +109,5 @@ Para el manejo de estados entre microfrontends, se utiliza el concepto de Broadc
 
 ## Pizza Owner
 
-    Hernan Bracamonte 
+    Hernan Bracamonte
      - https://www.linkedin.com/in/hernanbracamonte/

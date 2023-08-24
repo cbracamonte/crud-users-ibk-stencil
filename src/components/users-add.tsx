@@ -9,7 +9,7 @@ import html2canvas from 'html2canvas';
 })
 export class UsersAdd {
   @Prop() ibkId: string;
-  @Prop() allRequiredFields: boolean;
+  @Prop() allRequiredFields = true;
   @Element() hostElement: HTMLElement;
   @State() formUser: {
     name: string;
@@ -96,19 +96,43 @@ export class UsersAdd {
     return (
       <div class="container" id="formAddUser">
         <h1 class="title">Agregar Usuario</h1>
-        <form class="contact-form" onSubmit={e => this.handleSubmit(e)}>
+        <form id={this.ibkId} class="contact-form" onSubmit={e => this.handleSubmit(e)}>
           <label class="contact-form__form-label" htmlFor="nombre">
             Nombre:
           </label>
-          <input class="contact-form__form-input" type="text" id="name" name="name" value={this.formUser.name} onInput={event => this.handleChange(event)} required />
+          <input
+            class="contact-form__form-input"
+            type="text"
+            id="name"
+            name="name"
+            value={this.formUser.name}
+            onInput={event => this.handleChange(event)}
+            required
+          />
           <label class="contact-form__form-label" htmlFor="nombre">
             Posición:
           </label>
-          <input class="contact-form__form-input" type="text" id="position" name="position" value={this.formUser.position} onInput={event => this.handleChange(event)} required />
+          <input
+            class="contact-form__form-input"
+            type="text"
+            id="position"
+            name="position"
+            value={this.formUser.position}
+            onInput={event => this.handleChange(event)}
+            required
+          />
           <label class="contact-form__form-label" htmlFor="email">
             Email:
           </label>
-          <input class="contact-form__form-input" type="email" id="email" name="email" value={this.formUser.email} onInput={event => this.handleChange(event)} required />
+          <input
+            class="contact-form__form-input"
+            type="email"
+            id="email"
+            name="email"
+            value={this.formUser.email}
+            onInput={event => this.handleChange(event)}
+            required
+          />
           <button class="contact-form__btn-submit" type="submit">
             Guardar
           </button>
