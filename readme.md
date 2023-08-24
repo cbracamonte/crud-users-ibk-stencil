@@ -91,6 +91,20 @@ Este proyecto es un ejemplo de un CRUD de Usuarios - Microfrontend con Stencil +
 
 ## Construcción y Ejecución
 
+- Recordar activar la configuración del archivo `stencil.config.ts` y dejarlo de esta manera:
+
+```javascript
+
+  outputTargets: [
+    Para generar la web y alojarla en un servidor http activamos esta configuracion
+    {
+      type: 'www',
+      baseUrl: 'http://localhost:3333',
+    }
+  ],
+
+```
+
     npm install
     npm run build
     npm run docker-build
