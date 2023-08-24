@@ -13,7 +13,7 @@ Este proyecto es un ejemplo de un CRUD de Usuarios - Microfrontend con Stencil +
 
 - En este caso vamos a generar un story para el componente `ibk-user-add`
 - Para generar Storybook a partir de componentes de Stencil, debemos seguir:
-- Nos dirigimos a `stencil.config.ts` y configuramos la forma del build, debemos generarlo con el type ````'dist-custom-elements' `````
+- Nos dirigimos a `stencil.config.ts` y configuramos la forma del build, debemos generarlo con el type `'dist-custom-elements'`
 
 ```javascript
 
